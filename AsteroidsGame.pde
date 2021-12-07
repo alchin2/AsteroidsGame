@@ -1,6 +1,6 @@
-//your variable declarations here
 int x = 0;
 int y = 0;
+int score = 0;
 Star[] stars = new Star[200];
 ArrayList <Asteroid> rock = new ArrayList <Asteroid>();
 public void setup() 
@@ -19,13 +19,17 @@ Spaceship ship = new Spaceship();
 public void draw() 
 {
   background(0);
-
+  textSize(20);
+  fill(255);
+  text(score, 20, 20);
   for (int i = 0; i < rock.size(); i ++) {
     rock.get(i).show();
     rock.get(i).move();
     float d = dist((float)ship.getX(), (float)ship.getY(), (float)rock.get(i).getX(), (float)rock.get(i).getY());
-    if (d < 10)
+    if (d < 10){
       rock.remove(i);
+      score++;
+    }
   }
   for (int i = 0; i < stars.length; i++)
     stars[i].display();
