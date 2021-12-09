@@ -42,12 +42,12 @@ public void draw()
   for (int i = 0; i < rock.size(); i ++) {
     rock.get(i).show();
     rock.get(i).move();
-    float d = dist((float)ship.getX(), (float)ship.getY(), (float)rock.get(i).getX(), (float)rock.get(i).getY());
+    //float d = dist((float)ship.getX(), (float)ship.getY(), (float)rock.get(i).getX(), (float)rock.get(i).getY());
 
-    if (d < 10) {
-      rock.remove(i);
-      score++;
-    }
+   // if (d < 10) {
+     // rock.remove(i);
+    //  score++;
+   // }
   }
   if (shots.size() > 0) {
 
