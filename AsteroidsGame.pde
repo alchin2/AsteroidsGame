@@ -44,10 +44,10 @@ public void draw()
     rock.get(i).move();
     //float d = dist((float)ship.getX(), (float)ship.getY(), (float)rock.get(i).getX(), (float)rock.get(i).getY());
 
-   // if (d < 10) {
-     // rock.remove(i);
-    //  score++;
-   // }
+   if (d < 10) {
+     rock.remove(i);
+    score++;
+   }
   }
   if (shots.size() > 0) {
 
