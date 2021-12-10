@@ -59,6 +59,7 @@ public void draw()
           rock.remove(i);
           shots.remove(j);
           score++;
+          break;
         }
       }
     }
