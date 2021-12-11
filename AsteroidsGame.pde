@@ -51,7 +51,6 @@ public void draw()
     score++;
    }
   }
-  if (shots.size() > 0) {
 
 
     for (int j = 0; j < shots.size(); j ++) {
@@ -65,7 +64,6 @@ public void draw()
         }
       }
     }
-  }
   pushMatrix();
   translate(width*0.5, height*0.5);
   rotate(frameCount / 400.0);
