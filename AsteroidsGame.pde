@@ -1,5 +1,3 @@
-//bullet dist not working
-
 int x = 0;
 int y = 0;
 int score = 0;
@@ -54,15 +52,19 @@ public void draw()
 
     for (int j = 0; j < rock.size(); j ++) {
       for (int i = 0; i < shots.size(); i ++) {
-        float f = dist((float)shots.get(j).getBX(), (float)shots.get(j).getBY(), (float)rock.get(i).getX(), (float)rock.get(i).getY()); 
+        float f = dist((float)shots.get(i).getBX(), (float)shots.get(i).getBY(), (float)rock.get(j).getX(), (float)rock.get(j).getY()); 
         if (f < 10) {
-          rock.remove(i);
-          shots.remove(j);
+          rock.remove(j);
+          shots.remove(i);
           score++;
           break;
         }
       }
     }
+   if (rock.size() ==5){
+     for (int i = 0; i < 10; i ++)
+       rock.add(i, new Asteroid());
+   }
   pushMatrix();
   translate(width*0.5, height*0.5);
   rotate(frameCount / 400.0);
