@@ -19,10 +19,9 @@ public void setup()
     rock.add(i, new Asteroid());
 }
 
-
-//public void mousePressed() {
-  //shots.add(new Bullet(ship));
-//}
+public void mousePressed() {
+  shots.add(new Bullet(ship));
+}
 
 public void draw() 
 {
@@ -102,8 +101,5 @@ public void keyPressed() {
   }
   if (key == 's') {
     ship.accelerate(-0.6);
-  }
-  if (key == 'q') {
-    shots.add(new Bullet(ship));
   }
 }
