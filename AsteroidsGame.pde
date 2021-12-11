@@ -25,6 +25,7 @@ public void mousePressed() {
 
 public void draw() 
 {
+  frameRate(144);
   background(0);
   textSize(20);
   fill(255);
