@@ -99,9 +99,9 @@ public void keyPressed() {
     ship.turn(+10);
   }
   if (key == 'w') {
-    ship.accelerate(0.6);
+    ship.accelerate(0.4);
   }
   if (key == 's') {
-    ship.accelerate(-0.6);
+    ship.accelerate(-0.4);
   }
 }
