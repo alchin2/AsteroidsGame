@@ -6,6 +6,7 @@ int score = 0;
 Star[] stars = new Star[200];
 ArrayList <Asteroid> rock = new ArrayList <Asteroid>();
 ArrayList <Bullet> shots = new ArrayList <Bullet>();
+Spaceship ship = new Spaceship();
 public void setup() 
 {
   background(0);
@@ -17,7 +18,7 @@ public void setup()
   for (int i = 0; i < 20; i ++)
     rock.add(i, new Asteroid());
 }
-Spaceship ship = new Spaceship();
+
 
 public void mousePressed() {
   shots.add(new Bullet(ship));
