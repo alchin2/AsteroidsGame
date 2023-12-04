@@ -1,27 +1,63 @@
-class Asteroid extends Floater {
-  protected double rotSpeed;
-  Asteroid() {
-    rotSpeed = (Math.random()*6)-3;
-    myColor = (155);
-    myCenterX = Math.random()*800;
-    myCenterY = Math.random()*800;
-    myXspeed = (Math.random()*3)-2;
-    myYspeed = (Math.random()*3)-2;
-    myPointDirection = (Math.random()*6)-3;
-    corners = 5;
-    xCorners= new int[]{-8,0,8,4,-4};
-    yCorners= new int[]{4,12,4,-6,-6};
+Spaceship ship = new Spaceship();
+Star[] Stars = new Star[100];
+Bullet pew = new Bullet(ship);
+ArrayList<Asteroid> rocks = new ArrayList<Asteroid>();
+public void setup()
+{
+  //your code here
+  background(0);
+  size(800, 800);
+  for (int i = 0; i<Stars.length; i++) {
+    Stars[i]=new Star();
+  }
+  for (int i = 0; i<10; i++) {
+    rocks.add(i, new Asteroid());
+  }
 }
+public void draw()
+{
+  frameRate(144);
+ 
+    background(0);
+    textSize(20);
+    fill(255);
+    ship.show();
+    ship.move();
+    pew.show();
+    pew.move();
+    for (int i = 0; i<Stars.length; i++) {
+      Stars[i].show();
+    }
+     for ( int i = 0; i< rocks.size(); i++) {
+    rocks.get(i).show();
+    rocks.get(i).move();
+   float d = dist((float)ship.getX(), (float)ship.getY(), (float)rocks.get(i).getX(), (float)rocks.get(i).getY());
+   if (d < 50) {
+     rocks.remove(i);
+       }
+    }
+    text((int)ship.getX(), 100, 100);
+    text((int)ship.getY(), 100, 140);
+    text((int)ship.getDirection(), 100, 180);
+  }
 
-public void move(){
-  turn(rotSpeed);
-  super.move();
-}
-
-public double getX(){
-      return myCenterX;
-}
-public double getY(){
-      return myCenterY;
-}
-}
+  public void keyPressed() {
+    if (key == 'w') {
+      ship.accelerate(0.4);
+    }
+      if (key == 's') {
+      ship.accelerate(-0.4);
+    }
+    if (key == 'a') {
+      ship.turn(-10);
+    }
+    if (key == 'd') {
+      ship.turn(10);
+    }
+    if (key == ' ') {
+      ship.setXspeed(0);
+      ship.setYspeed(0);
+      ship.setXcenter();
+      ship.setYcenter();
+    }
+  }
