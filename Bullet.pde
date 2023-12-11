@@ -9,11 +9,19 @@ class Bullet extends Floater
     accelerate(6);
   }
   public void show(){
-  fill(255, 0, 0);
-    ellipse ((float)myCenterX, (float)myCenterY, 10, 10);
+  fill(255, 255, 255);
+    ellipse ((float)myCenterX, (float)myCenterY, 3, 3);
   }
-  public void move(){
-  myCenterX+=myXspeed;
-  myCenterY+=myYspeed;
+   public void move ()   //move the floater in the current direction of travel
+  {      
+    //change the x and y coordinates by myXspeed and myYspeed       
+    myCenterX += myXspeed;    
+    myCenterY += myYspeed; 
   }
+   public double getpX(){
+ return myCenterX;
+ }
+  public double getpY(){
+ return myCenterY;
+ }
 }
