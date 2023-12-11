@@ -18,10 +18,10 @@ public void move(){
   super.move();
 }
 
-public double getX(){
+public double getaX(){
       return myCenterX;
 }
-public double getY(){
+public double getaY(){
       return myCenterY;
 }
 }
