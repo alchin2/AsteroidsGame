@@ -23,7 +23,6 @@ public void draw()
     fill(255);
     ship.show();
     ship.move();
-ship.hater();
     for (int i = 0; i<Stars.length; i++) {
       Stars[i].show();
     }
