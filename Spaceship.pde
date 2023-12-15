@@ -52,23 +52,6 @@ class Spaceship extends Floater
  return myPointDirection;
  }
 
-public void hater() {  
-  if (myXspeed > 0) {
-        myXspeed -= 0.1;
-        System.out.println(myXspeed);
-    } else if (myXspeed < 0) {
-        myXspeed += 0.1;
-    } else if (myXspeed <.1 || myXspeed >-.1){
-        myXspeed = 0;
-    }
 
-    if (myYspeed > 0) {
-        myYspeed -= 0.1;
-    } else if (myYspeed < 0 ) {
-        myYspeed += 0.1;
-    } else {
-        myYspeed = 0;
-    }
-}
 
 }
